@@ -10,13 +10,19 @@ import {
   FaQuestionCircle,
   FaExclamationTriangle,
   FaHistory,
+  FaThLarge,
 } from 'react-icons/fa';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [browseDropdownOpen, setBrowseDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+
+  const toggleBrowseDropdown = () => {
+    setBrowseDropdownOpen(!browseDropdownOpen);
   };
 
   return (
@@ -26,8 +32,22 @@ const Navbar = () => {
         <h1 className="navbar-logo">MovieMind</h1>
         <input type="text" placeholder="Search movies..." className="search-bar" />
       </div>
-      <div className="nav_components">
+
       <div className="navbar-right">
+        {/* Browse Dropdown */}
+        <div className="nav-icon-group" title="Browse" onClick={toggleBrowseDropdown}>
+          <FaThLarge className="icon browse-icon" />
+          <span className="nav-label">Browse</span>
+          {browseDropdownOpen && (
+            <div className="dropdown-menu browse-dropdown">
+              <button className="dropdown-item">Popular</button>
+              <button className="dropdown-item">Top rated</button>
+              <button className="dropdown-item">Trending</button>
+              <button className="dropdown-item">Recommendation</button>
+            </div>
+          )}
+        </div>
+
         {/* Favourites */}
         <div className="nav-icon-group" title="Favourites">
           <FaHeart className="icon" />
@@ -40,14 +60,12 @@ const Navbar = () => {
           <span className="nav-label">Wishlist</span>
         </div>
 
-        {/* Profile + Dropdown */}
+        {/* Profile & Dropdown */}
         <div className="profile-container">
-          <FaUser
-            className="icon-profile"
-            title="Profile"
-            onClick={toggleDropdown}
-            style={{ cursor: 'pointer' }}
-            />
+          <div onClick={toggleDropdown} className="nav-icon-group">
+            <FaUser className={`icon-profile ${dropdownOpen ? 'active' : ''}`} title="Profile" />
+            <span className="nav-label">Profile</span>
+          </div>
           {dropdownOpen && (
             <div className="dropdown-menu">
               <button className="dropdown-item"><FaUser /> Profile</button>
@@ -60,7 +78,6 @@ const Navbar = () => {
             </div>
           )}
         </div>
-      </div>
       </div>
     </nav>
   );

@@ -18,7 +18,7 @@ const Homepage = () => {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Recommended For You</h2>
+  
         <Recommendation />
       </section>
 

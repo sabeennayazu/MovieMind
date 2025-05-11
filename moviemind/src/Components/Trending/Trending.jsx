@@ -1,52 +1,58 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Trending.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const trendingMovies = [
-  {
-    id: 1,
-    title: 'Dune: Part Two',
-    year: 2024,
-    poster: 'https://m.media-amazon.com/images/I/81V+ZkEeG4L._AC_SY679_.jpg',
-  },
-  {
-    id: 1,
-    title: 'Dune: Part Two',
-    year: 2024,
-    poster: 'https://m.media-amazon.com/images/I/81V+ZkEeG4L._AC_SY679_.jpg',
-  },
-  {
-    id: 2,
-    title: 'Oppenheimer',
-    year: 2023,
-    poster: 'https://m.media-amazon.com/images/I/71dVJeSVO-L._AC_SY679_.jpg',
-  },
-  {
-    id: 3,
-    title: 'Spider-Man: No Way Home',
-    year: 2021,
-    poster: 'https://m.media-amazon.com/images/I/81c+9BOQNWL._AC_SY679_.jpg',
-  },
-  {
-    id: 4,
-    title: 'The Batman',
-    year: 2022,
-    poster: 'https://m.media-amazon.com/images/I/71pJpjBfqBL._AC_SY679_.jpg',
-  },
-
+const movies = [
+  { title: "Movie 1", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 2", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 3", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 4", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 5", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 6", image: "https://via.placeholder.com/200x300" },
+  { title: "Movie 7", image: "https://via.placeholder.com/200x300" },
 ];
 
 const Trending = () => {
+  const scrollRef = useRef(null);
+  const scrollInterval = useRef(null);
+
+  const startScroll = (direction) => {
+    stopScroll();
+    scrollInterval.current = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft += direction === 'left' ? -20 : 20;
+      }
+    }, 10);
+  };
+
+  const stopScroll = () => {
+    clearInterval(scrollInterval.current);
+  };
+
   return (
-    <div className="trending">
-      <h2>🔥 Trending Now</h2>
-      <div className="trending-container">
-        {trendingMovies.map((movie) => (
-          <div className="trending-card" key={movie.id}>
-            <img src={movie.poster} alt={movie.title} className="trending-poster" />
-            <div className="trending-info">
-              <h3>{movie.title}</h3>
-              <p>{movie.year}</p>
-            </div>
+    <div className="trending-wrapper">
+      <h2 className="trending-title">Trending Now</h2>
+      <div
+        className="scroll-button left"
+        onMouseEnter={() => startScroll('left')}
+        onMouseLeave={stopScroll}
+      >
+        <FaChevronLeft />
+      </div>
+
+      <div
+        className="scroll-button right"
+        onMouseEnter={() => startScroll('right')}
+        onMouseLeave={stopScroll}
+      >
+        <FaChevronRight />
+      </div>
+
+      <div className="trending-scroll" ref={scrollRef}>
+        {movies.map((movie, index) => (
+          <div className="movie-card" key={index}>
+            <img src={movie.image} alt={movie.title} />
+            <h4>{movie.title}</h4>
           </div>
         ))}
       </div>

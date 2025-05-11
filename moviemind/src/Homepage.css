@@ -37,15 +37,15 @@
 
 /* Section styling */
 .section {
-  padding: 20px 20px;
+  padding: 1px 20px 40px 20px;
 }
 
-.section-title {
+/* .section-title {
   font-size: 2rem;
-  color: #00ff88; /* green titles */
+  color: #00ff88;
   margin-bottom: 20px;
   text-align: center;
-}
+} */
 
 /* Responsive text */
 @media (max-width: 768px) {
