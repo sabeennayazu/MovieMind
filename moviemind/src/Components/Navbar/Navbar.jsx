@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Navbar.css';
 import {
   FaBars,
@@ -27,11 +29,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <FaBars className="menu-icon" />
-        <h1 className="navbar-logo">MovieMind</h1>
-        <input type="text" placeholder="Search movies..." className="search-bar" />
-      </div>
+      
+<div className="navbar-left">
+  <Link to="/" className="nav-home-link">
+    <FaBars className="menu-icon" />
+    <h1 className="navbar-logo">MovieMind</h1>
+  </Link>
+  <input type="text" placeholder="Search movies..." className="search-bar" />
+</div>
 
       <div className="navbar-right">
         {/* Browse Dropdown */}
@@ -49,16 +54,17 @@ const Navbar = () => {
         </div>
 
         {/* Favourites */}
-        <div className="nav-icon-group" title="Favourites">
-          <FaHeart className="icon" />
-          <span className="nav-label">Favourites</span>
-        </div>
+       <Link to="/favourites" className="nav-icon-group" title="Favourites">
+  <FaHeart className="icon" />
+  <span className="nav-label">Favourites</span>
+</Link>
 
         {/* Wishlist */}
-        <div className="nav-icon-group" title="Wishlist">
-          <FaBookmark className="icon" />
-          <span className="nav-label">Wishlist</span>
-        </div>
+        <Link to="/Wishlist" className="nav-icon-group" title="Wishlist">
+  <FaBookmark className="icon" />
+  <span className="nav-label">Wishlist</span>
+</Link>
+        
 
         {/* Profile & Dropdown */}
         <div className="profile-container">
@@ -74,7 +80,9 @@ const Navbar = () => {
               <button className="dropdown-item"><FaQuestionCircle /> Help & Support</button>
               <button className="dropdown-item"><FaExclamationTriangle /> Report a Problem</button>
               <hr />
-              <button className="dropdown-item logout"><FaSignOutAlt /> Logout</button>
+              <Link to="/Login" className="dropdown-item logout">
+  <FaSignOutAlt /> Logout
+</Link>
             </div>
           )}
         </div>

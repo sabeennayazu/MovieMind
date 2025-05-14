@@ -1,14 +1,30 @@
-import React, { useRef } from 'react';
-import './Trending.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, { useRef } from "react";
+import "./Trending.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const movies = [
-  { title: "Movie 1", image: "https://via.placeholder.com/200x300" },
-  { title: "Movie 2", image: "https://via.placeholder.com/200x300" },
-  { title: "Movie 3", image: "https://via.placeholder.com/200x300" },
-  { title: "Movie 4", image: "https://via.placeholder.com/200x300" },
-  { title: "Movie 5", image: "https://via.placeholder.com/200x300" },
-  { title: "Movie 6", image: "https://via.placeholder.com/200x300" },
+  {
+    title: "The Creator",
+    image:
+      "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1500x1500/products/90301/98769/the-creator-original-movie-poster-one-sheet-final-style-buy-now-at-starstills__81077.1697644483.jpg?c=2",
+  },
+  {
+    title: "Avengers",
+    image:
+      "https://www.vintagemovieposters.co.uk/wp-content/uploads/2023/03/IMG_1887-scaled.jpeg",
+  },
+  {
+    title: "Walk Alone",
+    image:
+      "https://marketplace.canva.com/EAFTl0ixW_k/1/0/1131w/canva-black-white-minimal-alone-movie-poster-YZ-0GJ13Nc8.jpg",
+  },
+  {
+    title: "John Wick 2",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYgeugdzWSaRq9q_fkMFLSnBM36Gecoiarw&s",
+  },
+  { title: "Bahubali", image: "https://c7.alamy.com/comp/J30B3J/baahubali-the-beginning-aka-bahubali-the-beginning-poster-from-left-J30B3J.jpg" },
+  { title: "Bahubali 2", image: "https://i.pinimg.com/736x/40/aa/4e/40aa4e597b0fb5c7d00bb54b1b2a0362.jpg" },
   { title: "Movie 7", image: "https://via.placeholder.com/200x300" },
 ];
 
@@ -20,7 +36,7 @@ const Trending = () => {
     stopScroll();
     scrollInterval.current = setInterval(() => {
       if (scrollRef.current) {
-        scrollRef.current.scrollLeft += direction === 'left' ? -20 : 20;
+        scrollRef.current.scrollLeft += direction === "left" ? -20 : 20;
       }
     }, 10);
   };
@@ -34,7 +50,7 @@ const Trending = () => {
       <h2 className="trending-title">Trending Now</h2>
       <div
         className="scroll-button left"
-        onMouseEnter={() => startScroll('left')}
+        onMouseEnter={() => startScroll("left")}
         onMouseLeave={stopScroll}
       >
         <FaChevronLeft />
@@ -42,7 +58,7 @@ const Trending = () => {
 
       <div
         className="scroll-button right"
-        onMouseEnter={() => startScroll('right')}
+        onMouseEnter={() => startScroll("right")}
         onMouseLeave={stopScroll}
       >
         <FaChevronRight />

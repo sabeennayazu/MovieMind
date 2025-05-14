@@ -16,24 +16,26 @@
 
 .recommendation-scroll {
   display: flex;
-  gap: 30px;
+  gap: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 10px;
   height: 100%;
+  /* scrollbar-width: none; */
 }
 
 .recommendation-scroll::-webkit-scrollbar {
   height: 8px;
 }
 
-.recommendation-scroll::-webkit-scrollbar-thumb {
+/* .recommendation-scroll::-webkit-scrollbar-thumb {
   background: orange;
   border-radius: 10px;
-}
+} */
 
 .movie-card {
-  min-width: calc((100% - 90px) / 4);
+  /* min-width: calc((100% - 90px) / 4); */
+  min-width: 212px;
   height: 100%;
   background-color: #222;
   border-radius: 10px;

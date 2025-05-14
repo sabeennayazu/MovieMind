@@ -1,43 +1,45 @@
-import React, { useRef } from 'react';
-import './Recommendation.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, { useRef } from "react";
+import "./Recommendation.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const movies = [
   {
     id: 1,
-    title: 'Inception',
+    title: "Inception",
     year: 2010,
-    poster: 'https://m.media-amazon.com/images/I/51s+qzN2rHL._AC_SY679_.jpg',
+    poster:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRChhtRNF6QL3R1AYyh4lb__M5DjOvHIJ5rlg&s",
   },
   {
     id: 2,
-    title: 'Interstellar',
+    title: "Interstellar",
     year: 2014,
-    poster: 'https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg',
+    poster: "https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg",
   },
   {
     id: 3,
-    title: 'The Dark Knight',
+    title: "The Dark Knight",
     year: 2008,
-    poster: 'https://m.media-amazon.com/images/I/71pox3r7bOL._AC_SY679_.jpg',
+    poster:
+      "https://imageio.forbes.com/specials-images/imageserve/61116cea2313e8bae55a536a/-Dune-/0x0.jpg?format=jpg&width=1440",
   },
   {
     id: 4,
-    title: 'The Matrix',
+    title: "The Matrix",
     year: 1999,
-    poster: 'https://m.media-amazon.com/images/I/51vpnbwFHrL._AC_SY679_.jpg',
+    poster: "https://m.media-amazon.com/images/I/51vpnbwFHrL._AC_SY679_.jpg",
   },
   {
     id: 5,
-    title: 'Dune',
+    title: "Dune",
     year: 2021,
-    poster: 'https://m.media-amazon.com/images/I/81+z7XnFAbL._AC_SY679_.jpg',
+    poster: "https://m.media-amazon.com/images/I/81+z7XnFAbL._AC_SY679_.jpg",
   },
   {
     id: 6,
-    title: 'Avatar',
+    title: "Avatar",
     year: 2009,
-    poster: 'https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SY679_.jpg',
+    poster: "https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SY679_.jpg",
   },
 ];
 
@@ -48,7 +50,7 @@ const Recommendation = () => {
   const startScroll = (direction) => {
     stopScroll();
     scrollInterval.current = setInterval(() => {
-      scrollRef.current.scrollLeft += direction === 'left' ? -20 : 20;
+      scrollRef.current.scrollLeft += direction === "left" ? -20 : 20;
     }, 10);
   };
 
@@ -62,7 +64,7 @@ const Recommendation = () => {
 
       <div
         className="scroll-button left"
-        onMouseEnter={() => startScroll('left')}
+        onMouseEnter={() => startScroll("left")}
         onMouseLeave={stopScroll}
       >
         <FaChevronLeft />
@@ -70,7 +72,7 @@ const Recommendation = () => {
 
       <div
         className="scroll-button right"
-        onMouseEnter={() => startScroll('right')}
+        onMouseEnter={() => startScroll("right")}
         onMouseLeave={stopScroll}
       >
         <FaChevronRight />
@@ -82,7 +84,6 @@ const Recommendation = () => {
             <img src={movie.poster} alt={movie.title} />
             <div className="movie-info">
               <h4>{movie.title}</h4>
-              <p>{movie.year}</p>
             </div>
           </div>
         ))}

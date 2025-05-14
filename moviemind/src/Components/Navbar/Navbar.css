@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: black;
   margin: 0;
   padding: 0;
@@ -38,6 +38,13 @@ body {
   color: orange;
 }
 
+.nav-home-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
 .search-bar {
   flex: 1;
   min-width: 200px;
@@ -68,6 +75,7 @@ body {
   align-items: center;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
 }
 
 .icon {
