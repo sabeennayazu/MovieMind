@@ -10,11 +10,11 @@ import MovieDetail from "../Pages/MovieDetail";
 const AppHandler = () => {
   return (
     <Routes>
-      {/* <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/Wishlist" element={<Wishlist />} />
     <Route path="/Favourites" element={<Favourites />} />
-     <Route path="/Login" element={<Login />} />    */}
-     <Route path="/MovieDetail" element={<MovieDetail />} />
+     <Route path="/Login" element={<Login />} />   
+     <Route path="/movie-detail" element={<MovieDetail />} />
     </Routes>
   );
 };
