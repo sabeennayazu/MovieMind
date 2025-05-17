@@ -72,6 +72,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .movie-icon-btn {
@@ -80,6 +81,7 @@
   color: orange;
   height: 40px;
   font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
