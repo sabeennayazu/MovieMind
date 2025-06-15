@@ -94,7 +94,7 @@
 }
 
 /* Recommendation Sidebar */
-.recommendation-sidebar {
+/* .recommendation-sidebar {
 	flex: 3;
 	background-color: #222;
 	border-radius: 10px;
@@ -102,7 +102,7 @@
 	height: 85vh;
 	max-height: 85vh;
 	overflow-y: auto;
-}
+} */
 
 .rec-title {
 	color: orange;

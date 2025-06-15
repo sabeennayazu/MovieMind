@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./MovieDetail.css";
 import { FaBookmark, FaHeart, FaShareAlt } from "react-icons/fa";
 import Navbar from "../Components/Navbar/Navbar";
+import SideRecommendation from "../Components/SideRecommendation/SideRecommendation";
 
 const MovieDetail = () => {
 	const [showMore, setShowMore] = useState(false);
@@ -84,37 +85,36 @@ const MovieDetail = () => {
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="recommendation-sidebar">
-					<h2 className="rec-title">Recommended</h2>
-					<p>Suggestions will appear here later.</p>
-				</div>
-			</div>
+					<div className="movie-info-container">
+						<div className="rating-stars">
+							{[1, 2, 3, 4, 5].map((star) => (
+								<span key={star} className="star">
+									★
+								</span>
+							))}
+						</div>
 
-			<div className="movie-info-container">
-				<div className="rating-stars">
-					{[1, 2, 3, 4, 5].map((star) => (
-						<span key={star} className="star">
-							★
-						</span>
-					))}
-				</div>
-
-				<div className="comment-section">
-					<input
-						type="text"
-						className="comment-input"
-						placeholder="Add a comment..."
-					/>
-					<div className="comment-display">
-						<p>
-							<strong>User123:</strong> Amazing movie! Must watch.
-						</p>
-						<button className="see-more-btn">See more comments</button>
+						<div className="comment-section">
+							<input
+								type="text"
+								className="comment-input"
+								placeholder="Add a comment..."
+							/>
+							<div className="comment-display">
+								<p>
+									<strong>User123:</strong> Amazing movie! Must watch.
+								</p>
+								<button className="see-more-btn">See more comments</button>
+							</div>
+						</div>
 					</div>
 				</div>
+				<SideRecommendation />
+
 			</div>
+
+
 		</div>
 	);
 };
